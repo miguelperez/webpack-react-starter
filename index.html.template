@@ -7,7 +7,6 @@
     <title>Webpack React Starter</title>
   </head>
   <body>
-    Hello World
-    <script src="bundle.js"></script>
+    Hello World woot
   </body>
 </html>
