@@ -54,3 +54,6 @@ Write es6 and transpile it to es5, inlcude a dev-server for rapid prototyping.
   - html-webpack-plugin
   - style-loader
   - css-loader
+  - node-sass
+  - sass-loader
+

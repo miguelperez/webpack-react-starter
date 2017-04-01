@@ -9,16 +9,21 @@ var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
+  context: path.join(basePath, 'src'),
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
   entry: {
-    app: './index.js',
+    app: './js/index.js',
     appStyles: [
-      './styles.css',
+      './css/styles.scss',
     ],
     vendor: [
-      'react'
+      'react',
+      'react-dom',
     ],
     vendorStyles: [
-      './node_modules/bootstrap/dist/css/bootstrap.css',
+      '../node_modules/bootstrap/dist/css/bootstrap.css',
     ],
   },
   output: {
@@ -28,12 +33,24 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
       },
       {
+        test: /\.scss$/,
+        exclude: /node_modules/,
+        loader: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            { loader: 'css-loader', },
+            { loader: 'sass-loader', },
+          ],
+        }),
+      },
+      {
         test: /\.css$/,
+        include: /node_modules/,
         loader: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: {

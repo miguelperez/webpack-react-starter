@@ -7,11 +7,7 @@
     <title>Webpack React Starter</title>
   </head>
   <body>
-    <div class="jumbotron">
-      <h1>Testing Bootstrap</h1>
-      <p>
-        Bootstrap is the most popular ...
-      </p>
+    <div id="root">
     </div>
   </body>
 </html>
