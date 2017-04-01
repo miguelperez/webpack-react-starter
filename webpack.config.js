@@ -3,12 +3,18 @@ var basePath = __dirname;
 
 // Change the generated HTML.
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var webpack = require('webpack');
 
 module.exports = {
-  entry: ['./index.js'],
+  entry: {
+    app: './index.js',
+    vendor: [
+      'react'
+    ],
+  },
   output: {
     path: path.join(basePath, 'dist'),
-    filename: 'bundle.js',
+    filename: '[chunkhash].[name].js',
   },
   module: {
     rules: [
@@ -30,6 +36,9 @@ module.exports = {
       filename: 'index.html', //Name of file in ./dist/
       template: 'index.html.template', //Name of template in ./src
       hash: true,
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      names: ['vendor', 'manifest'],
     }),
   ],
 };
