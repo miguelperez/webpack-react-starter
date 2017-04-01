@@ -14,7 +14,7 @@ module.exports = {
     extensions: ['.js', '.jsx'],
   },
   entry: {
-    app: './js/index.js',
+    app: './js/index.jsx',
     appStyles: [
       './css/styles.scss',
     ],
@@ -32,6 +32,12 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        enforce: 'pre',
+        loader: 'eslint-loader',
+      },
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
