@@ -1,0 +1,20 @@
+{
+  "name": "webpack-react-starter",
+  "version": "1.0.0",
+  "description": "Simple starter application for my development with react and webpack.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "webpack",
+    "react",
+    "starter",
+    "pack"
+  ],
+  "author": "Miguel Perez",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^2.3.2"
+  }
+}
