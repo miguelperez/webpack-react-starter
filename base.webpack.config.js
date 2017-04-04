@@ -21,6 +21,7 @@ module.exports = {
     vendor: [
       'react',
       'react-dom',
+      'react-redux',
     ],
     vendorStyles: [
       '../node_modules/bootstrap/dist/css/bootstrap.css',
